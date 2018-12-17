@@ -44,14 +44,14 @@ public class SQLiteDB extends SQLiteOpenHelper  {
     }
 
     public Cursor getNotification(int id) {
-        SQLiteDatabase db = this.getReadableDatabase();
+        SQLiteDatabase db = this.getWritableDatabase();
         Cursor res =  db.rawQuery("SELECT * FROM " + NOTIFICATION_TABLE_NAME + " WHERE " +
                 NOTIFICATION_ID + "=?", new String[]{Integer.toString(id)});
         return res;
     }
 
     public Cursor getAllNotifications() {
-        SQLiteDatabase db = this.getReadableDatabase();
+        SQLiteDatabase db = this.getWritableDatabase();
         Cursor res =  db.rawQuery( "SELECT * FROM " + NOTIFICATION_TABLE_NAME, null );
         return res;
     }
