@@ -3,6 +3,7 @@ package com.oneview.oneview_alerts;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -25,7 +26,7 @@ import com.google.firebase.iid.FirebaseInstanceId;
 public class HomeScreen extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     private static final String TAG = "HomeScreen";
-    private SQLiteDB dbHelper;
+    private SQLiteDB dbHelper = new SQLiteDB(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +34,6 @@ public class HomeScreen extends AppCompatActivity
         setContentView(R.layout.activity_home_screen);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
         Button btnShowToken = (Button)findViewById(R.id.button_show_token);
         final TextView token_text = (TextView)findViewById(R.id.token_text);
         final android.content.ClipboardManager clipboardManager = (ClipboardManager)getSystemService(CLIPBOARD_SERVICE);
@@ -69,6 +69,9 @@ public class HomeScreen extends AppCompatActivity
                 try {
                     dbHelper.insertNotification("This is a notification");
                     //Check if the message contains data
+                    Cursor rs = dbHelper.getAllNotifications();
+                    rs.moveToFirst();
+                    token_text.setText("Token: " +rs.getString((rs.getColumnIndex("NOTIFICATION_DETAILS"))));
                 }
                 catch (Exception e){
                     Toast.makeText(HomeScreen.this,e.toString(),Toast.LENGTH_SHORT).show();

@@ -4,7 +4,9 @@ package com.oneview.oneview_alerts;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.Toast;
 
 
 public class SQLiteDB extends SQLiteOpenHelper  {
@@ -35,10 +37,10 @@ public class SQLiteDB extends SQLiteOpenHelper  {
     }
 
     public boolean insertNotification(String notification){
-        SQLiteDB db = SQLiteDB.this;
+        SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(NOTIFICATION_DETAILS,notification);
-        db.getWritableDatabase().insert(NOTIFICATION_TABLE_NAME,null,contentValues);
+        db.insert(NOTIFICATION_TABLE_NAME,null,contentValues);
         return true;
     }
 

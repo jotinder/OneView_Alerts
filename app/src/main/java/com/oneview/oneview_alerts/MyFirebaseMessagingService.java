@@ -21,7 +21,7 @@ import java.io.IOException;
 
 public class MyFirebaseMessagingService extends FirebaseMessagingService  {
 
-    private SQLiteDB dbHelper;
+    private SQLiteDB dbHelper = new SQLiteDB(this);
     private static final String TAG = "MyFirebaseMsgService";
 
     @Override

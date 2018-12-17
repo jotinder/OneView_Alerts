@@ -24,7 +24,7 @@ import java.util.List;
 
 public class NotificationDetails extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-    private SQLiteDB dbHelper;
+    private SQLiteDB dbHelper = new SQLiteDB(this);
     private ListView lv;
     private List<String> notification_array = new ArrayList<String>();
 
@@ -55,6 +55,7 @@ public class NotificationDetails extends AppCompatActivity
         try{
             Cursor rs = dbHelper.getAllNotifications();
             rs.moveToFirst();
+
             do{
                 for (int i = 0; i < rs.getColumnCount(); i++) {
                     notification_array.add(rs.getString((rs.getColumnIndex("NOTIFICATION_DETAILS"))));
@@ -64,18 +65,20 @@ public class NotificationDetails extends AppCompatActivity
         }
         catch (Exception e)
         {
-            Toast.makeText(NotificationDetails.this,"Unable to retrieve from SQLite DB",Toast.LENGTH_SHORT).show();
+            Toast.makeText(NotificationDetails.this,e.toString(),Toast.LENGTH_SHORT).show();
+            //notification_array.add(e.toString());
         }
         try {
             ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(
                     this,
-                    android.R.layout.simple_list_item_1,
-                    notification_array);
+                    android.R.layout.simple_list_item_1,notification_array);
 
             lv.setAdapter(arrayAdapter);
         }
         catch (Exception e){
-            Toast.makeText(NotificationDetails.this,"Empty Array",Toast.LENGTH_SHORT).show();
+            Toast.makeText(NotificationDetails.this,e.toString(),Toast.LENGTH_SHORT).show();
+            //notification_array.add(e.toString());
+
         }
 
 
