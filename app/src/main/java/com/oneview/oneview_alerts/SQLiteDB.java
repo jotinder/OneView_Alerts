@@ -45,15 +45,15 @@ public class SQLiteDB extends SQLiteOpenHelper  {
     }
 
     public Cursor getNotification(int id) {
-        SQLiteDB db = SQLiteDB.this;
-        Cursor res =  db.getReadableDatabase().rawQuery("SELECT * FROM " + NOTIFICATION_TABLE_NAME + " WHERE " +
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor res =  db.rawQuery("SELECT * FROM " + NOTIFICATION_TABLE_NAME + " WHERE " +
                 NOTIFICATION_ID + "=?", new String[]{Integer.toString(id)});
         return res;
     }
 
     public Cursor getAllNotifications() {
-        SQLiteDB db = SQLiteDB.this;
-        Cursor res =  db.getReadableDatabase().rawQuery( "SELECT * FROM " + NOTIFICATION_TABLE_NAME, null );
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor res =  db.rawQuery( "SELECT * FROM " + NOTIFICATION_TABLE_NAME, null );
         return res;
     }
 }

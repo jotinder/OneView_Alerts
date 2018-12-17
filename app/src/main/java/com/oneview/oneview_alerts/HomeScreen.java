@@ -75,6 +75,7 @@ public class HomeScreen extends AppCompatActivity
                 }
                 catch (Exception e){
                     Toast.makeText(HomeScreen.this,e.toString(),Toast.LENGTH_SHORT).show();
+                    e.printStackTrace();
                     token_text.setText("Token: " + e.toString());
                 }
             }
