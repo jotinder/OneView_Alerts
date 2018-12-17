@@ -15,13 +15,13 @@
       },
       "oauth_client": [
         {
-          "client_id": "382770807213-1dq02l6a76od0g0gtdiarhr700mgqih3.apps.googleusercontent.com",
+          "client_id": "XXXX.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCgY9Dxjlya6tHD3ajL0gFRqVVTjl-XFQE"
+          "current_key": "XXXXX"
         }
       ],
       "services": {
