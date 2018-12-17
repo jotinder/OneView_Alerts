@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "382770807213",
+    "firebase_url": "https://oneviewalerts.firebaseio.com",
+    "project_id": "oneviewalerts",
+    "storage_bucket": "oneviewalerts.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:382770807213:android:b3caaed79c4d14a9",
+        "android_client_info": {
+          "package_name": "com.oneview.oneview_alerts"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "382770807213-1dq02l6a76od0g0gtdiarhr700mgqih3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCgY9Dxjlya6tHD3ajL0gFRqVVTjl-XFQE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

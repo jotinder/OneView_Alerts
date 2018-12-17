@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">OneView_Alerts</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_notification_details">NotificationDetails</string>
+    <string name="ShowToken">Show Token</string>
+    <string name="NotificationDetails">Notifications</string>
+    <string name="Oneview">OneView</string>
+    <string name="oneview_email">ovasg.sls.test@TechMahindra.com</string>
+</resources>
