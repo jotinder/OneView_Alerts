@@ -6,7 +6,6 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.widget.Toast;
 
 
 public class SQLiteDB extends SQLiteOpenHelper  {
@@ -21,13 +20,13 @@ public class SQLiteDB extends SQLiteOpenHelper  {
     }
 
     @Override
-    public void onUpgrade(android.database.sqlite.SQLiteDatabase db, int oldVersion, int newVersion) {
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " + NOTIFICATION_TABLE_NAME);
         onCreate(db);
     }
 
     @Override
-    public void onCreate(android.database.sqlite.SQLiteDatabase db) {
+    public void onCreate(SQLiteDatabase db) {
 
         db.execSQL(
                 "CREATE TABLE " + NOTIFICATION_TABLE_NAME +
